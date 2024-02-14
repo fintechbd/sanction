@@ -1,8 +1,8 @@
 <?php
 
-namespace VendorName\Skeleton;
+namespace Fintech\Sanction;
 
-class Skeleton
+class Sanction
 {
     //** Crud Service Method Point Do not Remove **//
 }
