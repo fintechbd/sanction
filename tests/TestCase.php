@@ -2,9 +2,9 @@
 
 namespace Fintech\Sanction\Tests;
 
+use Fintech\Sanction\SanctionServiceProvider;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Orchestra\Testbench\TestCase as Orchestra;
-use Fintech\Sanction\SanctionServiceProvider;
 
 class TestCase extends Orchestra
 {

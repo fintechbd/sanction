@@ -2,9 +2,9 @@
 
 namespace Fintech\Sanction;
 
-use Illuminate\Support\ServiceProvider;
 use Fintech\Sanction\Commands\InstallCommand;
 use Fintech\Sanction\Commands\SanctionCommand;
+use Illuminate\Support\ServiceProvider;
 
 class SanctionServiceProvider extends ServiceProvider
 {
