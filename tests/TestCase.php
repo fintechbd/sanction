@@ -4,7 +4,7 @@ namespace Fintech\Sanction\Tests;
 
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Orchestra\Testbench\TestCase as Orchestra;
-use Fintech\Sanction\SanctionServiceProvider;
+use packages\Sanction\src\SanctionServiceProvider;
 
 class TestCase extends Orchestra
 {
