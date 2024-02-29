@@ -60,6 +60,8 @@
     "extra": {
         "laravel": {
             "providers": [
+                "Fintech\\Sanction\\RouteServiceProvider",
+                "Fintech\\Sanction\\RepositoryServiceProvider",
                 "Fintech\\Sanction\\SanctionServiceProvider"
             ],
             "aliases": {

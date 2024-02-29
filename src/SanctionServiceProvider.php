@@ -18,9 +18,6 @@ class SanctionServiceProvider extends ServiceProvider
         $this->mergeConfigFrom(
             __DIR__.'/../config/sanction.php', 'fintech.sanction'
         );
-
-        $this->app->register(RouteServiceProvider::class);
-        $this->app->register(RepositoryServiceProvider::class);
     }
 
     /**
