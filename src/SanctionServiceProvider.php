@@ -2,12 +2,15 @@
 
 namespace Fintech\Sanction;
 
+use Fintech\Core\Traits\RegisterPackageTrait;
 use Fintech\Sanction\Commands\InstallCommand;
 use Fintech\Sanction\Commands\SanctionCommand;
 use Illuminate\Support\ServiceProvider;
 
 class SanctionServiceProvider extends ServiceProvider
 {
+    use RegisterPackageTrait;
+
     /**
      * Register any application services.
      *
@@ -15,6 +18,8 @@ class SanctionServiceProvider extends ServiceProvider
      */
     public function register()
     {
+        $this->packageCode = 'sanction';
+
         $this->mergeConfigFrom(
             __DIR__.'/../config/sanction.php', 'fintech.sanction'
         );
@@ -28,6 +33,8 @@ class SanctionServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
+        $this->injectOnConfig();
+
         $this->publishes([
             __DIR__.'/../config/sanction.php' => config_path('fintech/sanction.php'),
         ]);
