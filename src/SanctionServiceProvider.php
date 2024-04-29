@@ -24,8 +24,8 @@ class SanctionServiceProvider extends ServiceProvider
             __DIR__.'/../config/sanction.php', 'fintech.sanction'
         );
 
-        $this->app->register(RouteServiceProvider::class);
-        $this->app->register(RepositoryServiceProvider::class);
+        $this->app->register(\Fintech\Sanction\Providers\RouteServiceProvider::class);
+        $this->app->register(\Fintech\Sanction\Providers\RepositoryServiceProvider::class);
     }
 
     /**
