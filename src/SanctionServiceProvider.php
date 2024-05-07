@@ -4,7 +4,6 @@ namespace Fintech\Sanction;
 
 use Fintech\Core\Traits\RegisterPackageTrait;
 use Fintech\Sanction\Commands\InstallCommand;
-use Fintech\Sanction\Commands\SanctionCommand;
 use Illuminate\Support\ServiceProvider;
 
 class SanctionServiceProvider extends ServiceProvider
@@ -24,7 +23,6 @@ class SanctionServiceProvider extends ServiceProvider
             __DIR__.'/../config/sanction.php', 'fintech.sanction'
         );
 
-        $this->app->register(\Fintech\Sanction\Providers\RouteServiceProvider::class);
         $this->app->register(\Fintech\Sanction\Providers\RepositoryServiceProvider::class);
     }
 
@@ -55,8 +53,7 @@ class SanctionServiceProvider extends ServiceProvider
 
         if ($this->app->runningInConsole()) {
             $this->commands([
-                InstallCommand::class,
-                SanctionCommand::class,
+                InstallCommand::class
             ]);
         }
     }
