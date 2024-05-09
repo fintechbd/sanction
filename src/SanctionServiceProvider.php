@@ -4,6 +4,7 @@ namespace Fintech\Sanction;
 
 use Fintech\Core\Traits\RegisterPackageTrait;
 use Fintech\Sanction\Commands\InstallCommand;
+use Fintech\Sanction\Providers\RepositoryServiceProvider;
 use Illuminate\Support\ServiceProvider;
 
 class SanctionServiceProvider extends ServiceProvider
@@ -20,10 +21,10 @@ class SanctionServiceProvider extends ServiceProvider
         $this->packageCode = 'sanction';
 
         $this->mergeConfigFrom(
-            __DIR__.'/../config/sanction.php', 'fintech.sanction'
+            __DIR__ . '/../config/sanction.php', 'fintech.sanction'
         );
 
-        $this->app->register(\Fintech\Sanction\Providers\RepositoryServiceProvider::class);
+        $this->app->register(RepositoryServiceProvider::class);
     }
 
     /**
@@ -34,21 +35,21 @@ class SanctionServiceProvider extends ServiceProvider
         $this->injectOnConfig();
 
         $this->publishes([
-            __DIR__.'/../config/sanction.php' => config_path('fintech/sanction.php'),
+            __DIR__ . '/../config/sanction.php' => config_path('fintech/sanction.php'),
         ]);
 
-        $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
+        $this->loadMigrationsFrom(__DIR__ . '/../database/migrations');
 
-        $this->loadTranslationsFrom(__DIR__.'/../lang', 'sanction');
+        $this->loadTranslationsFrom(__DIR__ . '/../lang', 'sanction');
 
         $this->publishes([
-            __DIR__.'/../lang' => $this->app->langPath('vendor/sanction'),
+            __DIR__ . '/../lang' => $this->app->langPath('vendor/sanction'),
         ]);
 
-        $this->loadViewsFrom(__DIR__.'/../resources/views', 'sanction');
+        $this->loadViewsFrom(__DIR__ . '/../resources/views', 'sanction');
 
         $this->publishes([
-            __DIR__.'/../resources/views' => resource_path('views/vendor/sanction'),
+            __DIR__ . '/../resources/views' => resource_path('views/vendor/sanction'),
         ]);
 
         if ($this->app->runningInConsole()) {
