@@ -3,7 +3,7 @@
 namespace Fintech\Sanction;
 
 use Fintech\Core\Traits\RegisterPackageTrait;
-use Fintech\Sanction\Commands\InstallCommand;
+use packages\Sanction\src\Commands\InstallCommand;
 use Fintech\Sanction\Providers\RepositoryServiceProvider;
 use Illuminate\Support\ServiceProvider;
 
@@ -47,6 +47,8 @@ class SanctionServiceProvider extends ServiceProvider
         ]);
 
         $this->loadViewsFrom(__DIR__.'/../resources/views', 'sanction');
+
+        $this->loadRoutesFrom(__DIR__.'/../routes/api.php');
 
         $this->publishes([
             __DIR__.'/../resources/views' => resource_path('views/vendor/sanction'),
