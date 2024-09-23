@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 if (Config::get('fintech.sanction.enabled')) {
-    Route::prefix(config('fintech.sanction.root_prefix', 'api/'))->middleware(['api', 'http_log', 'encrypted'])->group(function () {
+    Route::prefix(config('fintech.sanction.root_prefix', 'api/'))->middleware(['api'])->group(function () {
         Route::prefix('sanction')->name('sanction.')->group(function () {
 
             //DO NOT REMOVE THIS LINE//
