@@ -2,7 +2,7 @@
 
 namespace Fintech\Sanction;
 
-use Fintech\Core\Traits\RegisterPackageTrait;
+use Fintech\Core\Traits\Packages\RegisterPackageTrait;
 use Fintech\Sanction\Providers\RepositoryServiceProvider;
 use Illuminate\Support\ServiceProvider;
 use packages\Sanction\src\Commands\InstallCommand;
