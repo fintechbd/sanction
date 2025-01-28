@@ -17,7 +17,7 @@ if (Config::get('fintech.sanction.enabled')) {
     Route::prefix(config('fintech.sanction.root_prefix', 'api/'))->middleware(['api'])->group(function () {
         Route::prefix('sanction')->name('sanction.')->group(function () {
 
-            //DO NOT REMOVE THIS LINE//
+            // DO NOT REMOVE THIS LINE//
         });
     });
 }
