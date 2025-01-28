@@ -9,7 +9,7 @@ return [
     |--------------------------------------------------------------------------
     | This setting enable the API will be available or not
     */
-    'enabled' => env('PACKAGE_Sanction_ENABLED', true),
+    'enabled' => env('SANCTION_ENABLED', true),
 
     /*
     |--------------------------------------------------------------------------
