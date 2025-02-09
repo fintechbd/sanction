@@ -3,9 +3,9 @@
 namespace Fintech\Sanction;
 
 use Fintech\Core\Traits\Packages\RegisterPackageTrait;
+use Fintech\Sanction\Commands\InstallCommand;
 use Fintech\Sanction\Providers\RepositoryServiceProvider;
 use Illuminate\Support\ServiceProvider;
-use packages\Sanction\src\Commands\InstallCommand;
 
 class SanctionServiceProvider extends ServiceProvider
 {
@@ -36,7 +36,7 @@ class SanctionServiceProvider extends ServiceProvider
 
         $this->publishes([
             __DIR__.'/../config/sanction.php' => config_path('fintech/sanction.php'),
-        ]);
+        ], 'fintech-sanction-config');
 
         $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
 
@@ -44,7 +44,7 @@ class SanctionServiceProvider extends ServiceProvider
 
         $this->publishes([
             __DIR__.'/../lang' => $this->app->langPath('vendor/sanction'),
-        ]);
+        ], 'fintech-sanction-lang');
 
         $this->loadViewsFrom(__DIR__.'/../resources/views', 'sanction');
 
@@ -52,7 +52,7 @@ class SanctionServiceProvider extends ServiceProvider
 
         $this->publishes([
             __DIR__.'/../resources/views' => resource_path('views/vendor/sanction'),
-        ]);
+        ], 'fintech-sanction-views');
 
         if ($this->app->runningInConsole()) {
             $this->commands([
